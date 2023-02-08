@@ -25,7 +25,7 @@ export const Projects = () => {
       title: "Flour-ish",
       description: "Design, Programming",
       imgUrl: flourish,
-      url: "https://jasli106.itch.io/a-kitsunes-tail",
+      url: "https://lyanac.itch.io/flour-ish",
     }
   ];
 
