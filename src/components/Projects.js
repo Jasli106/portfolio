@@ -3,7 +3,7 @@ import { ProjectCard } from "./ProjectCard";
 import kitsunestail from "../assets/img/project-imgs/kitsunestail.png";
 import ragnaroktd from "../assets/img/project-imgs/ragnaroktd.png";
 import flourish from "../assets/img/project-imgs/flourish.png";
-import colorSharp2 from "../assets/img/color-sharp2.png";
+import footer from "../assets/img/footer-bg.png";
 import TrackVisibility from 'react-on-screen';
 
 export const Projects = () => {
@@ -84,7 +84,7 @@ export const Projects = () => {
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2}></img>
+      <img className="background-image-right" src={footer}></img>
     </section>
   )
 }
