@@ -3,6 +3,7 @@ import { ProjectCard } from "./ProjectCard";
 import kitsunestail from "../assets/img/project-imgs/kitsunestail.png";
 import ragnaroktd from "../assets/img/project-imgs/ragnaroktd.png";
 import flourish from "../assets/img/project-imgs/flourish.png";
+import fieldsoffamine from "../assets/img/project-imgs/fieldsoffamine.png";
 import footer from "../assets/img/footer-bg.png";
 import TrackVisibility from 'react-on-screen';
 
@@ -26,6 +27,12 @@ export const Projects = () => {
       description: "Design, Programming",
       imgUrl: flourish,
       url: "https://lyanac.itch.io/flour-ish",
+    }, 
+    {
+      title: "Fields of Famine",
+      description: "Design, Video Editing",
+      imgUrl: fieldsoffamine,
+      url: "https://globalgamejam.org/2023/games/fields-famine-2",
     }
   ];
 
@@ -69,6 +76,11 @@ export const Projects = () => {
                       <Row>
                       <center>
                       <iframe width="560" height="315" src="https://www.youtube.com/embed/bxZ8_xueg04" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                      </center>
+                      </Row>
+                      <Row>
+                      <center>
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/-92N4-kIhsg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                       </center>
                       </Row>
                     </Tab.Pane>
