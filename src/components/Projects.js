@@ -4,12 +4,13 @@ import kitsunestail from "../assets/img/project-imgs/kitsunestail.png";
 import ragnaroktd from "../assets/img/project-imgs/ragnaroktd.png";
 import flourish from "../assets/img/project-imgs/flourish.png";
 import fieldsoffamine from "../assets/img/project-imgs/fieldsoffamine.png";
+import cnote from "../assets/img/project-imgs/cnote.png";
 import footer from "../assets/img/footer-bg.png";
 import TrackVisibility from 'react-on-screen';
 
 export const Projects = () => {
 
-  const projects = [
+  const projectsGameDev = [
     {
       title: "Ragnarok TD",
       description: "Programming",
@@ -33,6 +34,27 @@ export const Projects = () => {
       description: "Design, Video Editing",
       imgUrl: fieldsoffamine,
       url: "https://globalgamejam.org/2023/games/fields-famine-2",
+    }
+  ];
+
+  const projectsXR = [
+    {
+      title: "",
+      description: "",
+      imgUrl: "",
+      url: "",
+    },
+    {
+      title: "C-Note",
+      description: "Programming",
+      imgUrl: cnote,
+      url: "https://piyawatm.wixsite.com/c-note",
+    },
+    {
+      title: "",
+      description: "",
+      imgUrl: "",
+      url: "",
     }
   ];
 
@@ -61,7 +83,7 @@ export const Projects = () => {
                     <Tab.Pane eventKey="first">
                       <Row>
                         {
-                          projects.map((project, index) => {
+                          projectsGameDev.map((project, index) => {
                             return (
                               <ProjectCard
                                 key={index}
@@ -82,6 +104,18 @@ export const Projects = () => {
                       <center>
                       <iframe width="560" height="315" src="https://www.youtube.com/embed/-92N4-kIhsg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                       </center>
+                      </Row>
+                      <Row>
+                        {
+                          projectsXR.map((project, index) => {
+                            return (
+                              <ProjectCard
+                                key={index}
+                                {...project}
+                                />
+                            )
+                          })
+                        }
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
