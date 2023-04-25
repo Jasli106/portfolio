@@ -1,7 +1,8 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import kitsunestail from "../assets/img/project-imgs/kitsunestail.png";
+import curseofthecorsair from "../assets/img/project-imgs/curseofthecorsair.png";
 import ragnaroktd from "../assets/img/project-imgs/ragnaroktd.png";
+import kitsunestail from "../assets/img/project-imgs/kitsunestail.png";
 import flourish from "../assets/img/project-imgs/flourish.png";
 import fieldsoffamine from "../assets/img/project-imgs/fieldsoffamine.png";
 import cnote from "../assets/img/project-imgs/cnote.png";
@@ -11,6 +12,12 @@ import TrackVisibility from 'react-on-screen';
 export const Projects = () => {
 
   const projectsGameDev = [
+    {
+      title: "Curse of the Corsair",
+      description: "Programming",
+      imgUrl: curseofthecorsair,
+      url: "https://store.steampowered.com/app/2365570/Curse_of_the_Corsair/",
+    },
     {
       title: "Ragnarok TD",
       description: "Programming",
