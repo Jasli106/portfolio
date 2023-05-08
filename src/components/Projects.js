@@ -16,6 +16,7 @@ export const Projects = () => {
       title: "Curse of the Corsair",
       description: "Programming",
       imgUrl: curseofthecorsair,
+      //url: "",
       url: "https://store.steampowered.com/app/2365570/Curse_of_the_Corsair/",
     },
     {
@@ -104,12 +105,12 @@ export const Projects = () => {
                     <Tab.Pane eventKey="second">
                       <Row>
                       <center>
-                      <iframe width="560" height="315" src="https://www.youtube.com/embed/bxZ8_xueg04" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/bxZ8_xueg04" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                       </center>
                       </Row>
                       <Row>
                       <center>
-                      <iframe width="560" height="315" src="https://www.youtube.com/embed/-92N4-kIhsg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                      <iframe width="560" height="315" src="https://www.youtube.com/embed/-92N4-kIhsg" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                       </center>
                       </Row>
                       <Row>
@@ -137,7 +138,7 @@ export const Projects = () => {
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={footer}></img>
+      {/* <img className="background-image-right" src={footer}></img> */}
     </section>
   )
 }

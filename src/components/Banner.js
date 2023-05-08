@@ -58,7 +58,7 @@ export const Banner = () => {
                 <h1>{`Hi! I'm Jasmine Li`} 
                 {/* <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span> */}
                 </h1>
-                  <p>Junior in Computer Science at the University of Michigan.</p>
+                  <p>I am a rising senior at the University of Michigan, studying Computer Science with a minor in History of Art.</p>
               </div>}
             </TrackVisibility>
           </Col>
