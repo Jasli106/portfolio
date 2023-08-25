@@ -58,7 +58,8 @@ export const Banner = () => {
                 <h1>{`Hi! I'm Jasmine Li`} 
                 {/* <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span> */}
                 </h1>
-                  <p>I am a rising senior at the University of Michigan, studying Computer Science with a minor in History of Art.</p>
+                <p>I am a rising senior at the University of Michigan, studying Computer Science with a minor in History of Art.</p>
+                <p>I am currently working at Nochi Studios as a gameplay programming intern, and developing the Timber game engine--an accessible, web-based game engine aiming to teach RTS, RPG and TD principles/development--as part of a research team led by Austin Yarger.</p>
               </div>}
             </TrackVisibility>
           </Col>

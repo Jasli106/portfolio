@@ -1,17 +1,38 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
+import sweetcorebrews from "../assets/img/project-imgs/sweetcorebrews.png";
 import curseofthecorsair from "../assets/img/project-imgs/curseofthecorsair/curseofthecorsair.png";
 import ragnaroktd from "../assets/img/project-imgs/ragnaroktd.png";
 import kitsunestail from "../assets/img/project-imgs/kitsunestail.png";
+import scoopsup from "../assets/img/project-imgs/scoopsup.png";
 import flourish from "../assets/img/project-imgs/flourish.png";
 import fieldsoffamine from "../assets/img/project-imgs/fieldsoffamine.png";
 import cnote from "../assets/img/project-imgs/cnote.png";
+import asher from "../assets/img/project-imgs/asher.png";
 import footer from "../assets/img/footer-bg.png";
 import TrackVisibility from 'react-on-screen';
 
 export const Projects = () => {
 
   const projectsGameDev = [
+    {
+      title: "Sweetcore Brews",
+      description: "Programming",
+      imgUrl: sweetcorebrews,
+      url: "https://nochistudios.com/sweetcore-brews",
+      detail:
+      (<div>
+        <p>Sweetcore Brews is an original romance visual novel about a young witch who runs a magical tea shop. 
+          I have been working on this game with Nochi Studios as a gameplay programming intern, starting Summer 2023. Some of my contributions include:</p>
+        <ul>
+          <li>Fully developed two versions of Mad Libs minigame (both a PC and mobile version)</li>
+          <li>Owned development of AR experience; players buy and scan physical merch to experience their favorite characters in augmented reality</li>
+          <li>Visual effects: Shaders, particle effects, popups, transitions, and other UI effects</li>
+          <li>Backend: Integrating Unity app, Squarespace website, Firebase database and Google sheets to track customer account data</li>
+        </ul>
+      </div>),
+      imgDir: "curseofthecorsair/",
+    },
     {
       title: "Curse of the Corsair",
       description: "Programming",
@@ -68,6 +89,24 @@ export const Projects = () => {
           <li>Creating shaders</li>
           <li>Game features: signs and collectibles, player movement, some platforms</li>
           <li>Level design</li>
+        </ul>
+      </div>),
+      imgDir: "curseofthecorsair/",
+    },
+    {
+      title: "Scoops Up!",
+      description: "Design, Programming, Art",
+      imgUrl: scoopsup,
+      url: "https://kevcgt.itch.io/scoops-up",
+      detail:
+      (<div>
+        <p>Scoops Up! is a 3D multiplayer order management game made for the 2023 WolverineSoft Beach Jam.  
+          For this project, my contributions include:</p>
+        <ul>
+          <li>Multiplayer gameplay development with Photon</li>
+          <li>Level design</li>
+          <li>Texturing 3D assets</li>
+          <li>Art integration</li>
         </ul>
       </div>),
       imgDir: "curseofthecorsair/",
@@ -146,6 +185,25 @@ export const Projects = () => {
       url: "",
     }
   ];
+  const projectsOther = [
+    {
+      title: "Asher's Website",
+      description: "Programming",
+      imgUrl: asher,
+      url: "https://kayjohn1512.github.io",
+      detail: (<div>
+        <p>Asher's website is an online photo gallery for my roommate's dog, Asher. We found him during a road trip at a gas station in New Mexico, and subsequently, my roommate adopted him. We wanted to have a place to consolidate and record his antics, and so they could be easily shared.
+          For this project, my contributions include:
+        </p>
+        <ul>
+          <li>Frontend development: Photo gallery with popups and toggle-able captions</li>
+          <li>Developed image tag filter system</li>
+          <li>Set up google sheets system to manage photos and image tags</li>
+        </ul>
+      </div>),
+      imgDir: "curseofthecorsair/",
+    }
+  ];
 
   return (
     <section className="project" id="project">
@@ -209,7 +267,16 @@ export const Projects = () => {
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
                       <Row>
-                        <p>Coming Soon!</p>
+                      {
+                        projectsOther.map((project, index) => {
+                          return (
+                            <ProjectCard
+                              key={index}
+                              {...project}
+                              />
+                          )
+                        })
+                      }
                       </Row>
                     </Tab.Pane>
                   </Tab.Content>
