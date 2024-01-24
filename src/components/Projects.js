@@ -34,6 +34,27 @@ export const Projects = () => {
       imgDir: "curseofthecorsair/",
     },
     {
+      title: "C-Note",
+      description: "Programming",
+      imgUrl: cnote,
+      url: "https://piyawatm.wixsite.com/c-note",
+      detail: (<div>
+        <p>C-Note is an educational application that uses augmented reality (AR) technology to help introduce students to sound design.
+          C-Note was created for EECS 498: Extended Reality and Society, as part of a team of 5 students over the course of 4 weeks.
+          C-Note is designed with children in mind, and features a set of physical puzzle pieces that are used in conjunction with the AR app to create an immersive and interactive learning experience.
+          With C-Note, students can explore the intricate process of sound design by manipulating a variety of virtual sound objects, such as selecting the sound waveform, and chaining effects like distortion, reverb, and chorus together.
+          For this project, my contributions include:
+        </p>
+        <ul>
+          <li>UI/UX design</li>
+          <li>App features: AR image tracking, songbook, AR UI, app UI</li>
+          <li>Art integration: 3D animations</li>
+          <li>Some work on the in-app synthesizer using FMOD</li>
+        </ul>
+      </div>),
+      imgDir: "curseofthecorsair/",
+    },
+    {
       title: "Curse of the Corsair",
       description: "Programming",
       imgUrl: curseofthecorsair,
@@ -92,100 +113,9 @@ export const Projects = () => {
         </ul>
       </div>),
       imgDir: "curseofthecorsair/",
-    },
-    {
-      title: "Scoops Up!",
-      description: "Design, Programming, Art",
-      imgUrl: scoopsup,
-      url: "https://kevcgt.itch.io/scoops-up",
-      detail:
-      (<div>
-        <p>Scoops Up! is a 3D multiplayer order management game made for the 2023 WolverineSoft Beach Jam.  
-          For this project, my contributions include:</p>
-        <ul>
-          <li>Multiplayer gameplay development with Photon</li>
-          <li>Level design</li>
-          <li>Texturing 3D assets</li>
-          <li>Art integration</li>
-        </ul>
-      </div>),
-      imgDir: "curseofthecorsair/",
-    },
-    {
-      title: "Flour-ish",
-      description: "Design, Programming",
-      imgUrl: flourish,
-      url: "https://lyanac.itch.io/flour-ish",
-      detail: (<div>
-        <p>Flour-ish is a 3D puzzle platformer made for the 2022 WolverineSoft Turkey Jam.  
-          For this project, my contributions include:
-        </p>
-        <ul>
-          <li>Game mechanics: grabbable items, end goal, player death</li>
-          <li>Custom editor tool: pathmaker for path-following furniture</li>
-          <li>Particle effects</li>
-          <li>Lighting design</li>
-          <li>Level design</li>
-        </ul>
-      </div>),
-      imgDir: "curseofthecorsair/",
-    }, 
-    {
-      title: "Fields of Famine",
-      description: "Design, Video Editing",
-      imgUrl: fieldsoffamine,
-      url: "https://globalgamejam.org/2023/games/fields-famine-2",
-      detail: (<div>
-        <p>Fields of Famine is a fast-paced board game themed around the Irish Potato Famine.
-          This game was created for the 2023 Global Game Jam.
-          For this project, my contributions include:
-        </p>
-        <ul>
-          <li>Game design: story, mechanics</li>
-          <li>Trailer video: directing, editing, scriptwriting</li>
-          <li>Playtesting</li>
-        </ul>
-      </div>),
-      imgDir: "curseofthecorsair/",
     }
   ];
-
-  const projectsXR = [
-    {
-      title: "",
-      description: "",
-      imgUrl: "",
-      url: "",
-    },
-    {
-      title: "C-Note",
-      description: "Programming",
-      imgUrl: cnote,
-      url: "https://piyawatm.wixsite.com/c-note",
-      detail: (<div>
-        <p>C-Note is an educational application that uses augmented reality (AR) technology to help introduce students to sound design.
-          C-Note was created for EECS 498: Extended Reality and Society, as part of a team of 5 students over the course of 4 weeks.
-          C-Note is designed with children in mind, and features a set of physical puzzle pieces that are used in conjunction with the AR app to create an immersive and interactive learning experience.
-          With C-Note, students can explore the intricate process of sound design by manipulating a variety of virtual sound objects, such as selecting the sound waveform, and chaining effects like distortion, reverb, and chorus together.
-          For this project, my contributions include:
-        </p>
-        <ul>
-          <li>UI/UX design</li>
-          <li>App features: AR image tracking, songbook, AR UI, app UI</li>
-          <li>Art integration: 3D animations</li>
-          <li>Some work on the in-app synthesizer using FMOD</li>
-        </ul>
-      </div>),
-      imgDir: "curseofthecorsair/",
-    },
-    {
-      title: "",
-      description: "",
-      imgUrl: "",
-      url: "",
-    }
-  ];
-  const projectsOther = [
+  const projectsWeb = [
     {
       title: "Asher's Website",
       description: "Programming",
@@ -205,6 +135,8 @@ export const Projects = () => {
     }
   ];
 
+  const projectsAcademic = [];
+
   return (
     <section className="project" id="project">
       <Container>
@@ -217,13 +149,13 @@ export const Projects = () => {
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                     <Nav.Item>
-                      <Nav.Link eventKey="first">Game Development</Nav.Link>
+                      <Nav.Link eventKey="first">Game/XR</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="second">XR</Nav.Link>
+                      <Nav.Link eventKey="second">Web</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="third">Other</Nav.Link>
+                      <Nav.Link eventKey="third">Academic</Nav.Link>
                     </Nav.Item>
                   </Nav>
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
@@ -243,18 +175,8 @@ export const Projects = () => {
                     </Tab.Pane>
                     <Tab.Pane eventKey="second">
                       <Row>
-                      <center>
-                      <iframe width="560" height="315" src="https://www.youtube.com/embed/bxZ8_xueg04" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-                      </center>
-                      </Row>
-                      <Row>
-                      <center>
-                      <iframe width="560" height="315" src="https://www.youtube.com/embed/-92N4-kIhsg" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-                      </center>
-                      </Row>
-                      <Row>
                         {
-                          projectsXR.map((project, index) => {
+                          projectsWeb.map((project, index) => {
                             return (
                               <ProjectCard
                                 key={index}
@@ -268,7 +190,7 @@ export const Projects = () => {
                     <Tab.Pane eventKey="third">
                       <Row>
                       {
-                        projectsOther.map((project, index) => {
+                        projectsAcademic.map((project, index) => {
                           return (
                             <ProjectCard
                               key={index}

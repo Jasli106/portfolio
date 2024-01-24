@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import headerImg from "../assets/img/header-img.svg";
-import { ArrowRightCircle } from 'react-bootstrap-icons';
+import { Navbar, Nav } from "react-bootstrap";
 import TrackVisibility from 'react-on-screen';
 
 export const Banner = () => {
@@ -46,6 +45,27 @@ export const Banner = () => {
   //   }
   // }
 
+  const [activeLink, setActiveLink] = useState('home');
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    }
+
+    window.addEventListener("scroll", onScroll);
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [])
+
+  const onUpdateActiveLink = (value) => {
+    setActiveLink(value);
+  }
+
   return (
     <section className="banner" id="home">
       <Container>
@@ -54,12 +74,16 @@ export const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className="tagline">Welcome to my Portfolio</span>
+                {/* <span className="tagline">Welcome to my Portfolio</span> */}
                 <h1>{`Hi! I'm Jasmine Li`} 
                 {/* <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span> */}
                 </h1>
-                <p>I am a rising senior at the University of Michigan, studying Computer Science with a minor in History of Art.</p>
-                <p>I am currently working at Nochi Studios as a gameplay programming intern, and developing the Timber game engine--an accessible, web-based game engine aiming to teach RTS, RPG and TD principles/development--as part of a research team led by Austin Yarger.</p>
+                <p>I am a senior at the University of Michigan, studying Computer Science with a minor in History of Art.</p>
+                <p>I am currently:
+                <br />Developing the Timber game engine, an accessible, web-based game engine aiming to teach RTS, RPG and TD principles/development, as part of a research team led by Austin Yarger (University of Michigan).
+                <br />Contributing to research on situational awareness in human-robot interaction by maintaining an Unreal Engine simulation, and assisting with testing and data collection.</p>
+                {/* <button className="currently-working-on" href="#project">Find out what I'm working on</button> */}
+                <Nav.Link href="#project" className={'currently-working-on'} onClick={() => onUpdateActiveLink('projects')}>Find out what I'm working on</Nav.Link>
               </div>}
             </TrackVisibility>
           </Col>

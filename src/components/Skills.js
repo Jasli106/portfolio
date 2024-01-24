@@ -36,38 +36,34 @@ export const Skills = () => {
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
                                 {/* <img src={meter1} alt="Image" /> */}
-                                <h5>C++</h5>
+                                <h5>Languages: C++, C#, Python</h5>
                             </div>
                             <div className="item">
                                 {/* <img src={meter2} alt="Image" /> */}
-                                <h5>Game/XR Development: Unity, Unreal</h5>
+                                <h5>Game/XR Development: Unity, Unity AR Foundation, Unreal Engine 4 and 5, Godot, Game Engine Architecture</h5>
                             </div>
                             <div className="item">
                                 {/* <img src={meter3} alt="Image" /> */}
-                                <h5>Web Development: Javascript, HTML/CSS, PHP</h5>
-                            </div>
-                            <div className="item">
-                                {/* <img src={meter1} alt="Image" /> */}
-                                <h5>Python</h5>
-                            </div>
-                            <div className="item">
-                                {/* <img src={meter1} alt="Image" /> */}
-                                <h5>2D Animation/Rigging</h5>
-                            </div>
-                            <div className="item">
-                                {/* <img src={meter1} alt="Image" /> */}
-                                <h5>Arduino</h5>
+                                <h5>Web Development: Javascript, HTML/CSS, PHP, React, SQL</h5>
                             </div>
                             <div className="item">
                                 {/* <img src={meter1} alt="Image" /> */}
                                 <h5>Version Control (Git)</h5>
+                            </div>
+                            <div className="item">
+                                {/* <img src={meter1} alt="Image" /> */}
+                                <h5>Technical Art: 2D Animation/Rigging, Unity Shader Graph, Unity Animator</h5>
+                            </div>
+                            <div className="item">
+                                {/* <img src={meter1} alt="Image" /> */}
+                                <h5>Arduino</h5>
                             </div>
                         </Carousel>
                     </div>
                 </div>
             </div>
         </div>
-        <img className="background-image" src={background} alt="Image" />
+        {/* <img className="background-image" src={background} alt="Image" /> */}
     </section>
   )
 }
