@@ -1,16 +1,21 @@
 :root {
-  --maindark1: #606c38; 
+  --maindark1: #A3BCB6; 
+  /* #606c38;  */
   --maindark1t: #606c3880; 
-  --maindark2: #283618;
-  --mainlight1: #ccd5ae; 
+  --maindark2: #DADED4;
+  /* #283618; */
+  --mainlight1: #39603D;
+  /* #ccd5ae;  */
   --mainlight1t: #ccd5ae80; 
-  --mainlight2: #e9edc9;
-  --neutral: #fefae0;
-  --accentdark1: #dda15e;
-  --accentdark1t: #dda15e80;
-  --accentdark2: #bc6c25;
+  --mainlight2: #3C403D;
+  /* #e9edc9; */
+  --neutral: #3C403D;
+  /* #fefae0; */
+  --accentdark1: #DA8871;
+  --accentdark1t: #DB8A7480;
+  --accentdark2: #984447;
   --accentlight1: #faedcd;
-  --accentlight2: #d4a373;
+  --accentlight2: #E5AA9A;
   --gradient: linear-gradient(90.21deg, var(--mainlight1t) -5.91%, var(--accentdark1t) 111.58%);
 }
 
@@ -115,7 +120,7 @@ nav.navbar a.navbar-brand {
 }
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
-  color: var(--accentlight1) !important;
+  color: var(--neutral) !important;
   letter-spacing: 0.8px;
   padding: 0 15px;
   font-size: 18px;
@@ -136,7 +141,7 @@ span.navbar-text {
 .social-icon a {
     width: 42px;
     height: 42px;
-    background: var(--accentdark2);
+    background: var(--accentdark1);
     display: inline-flex;
     border-radius: 50%;
     margin-right: 6px;
@@ -249,7 +254,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /************ Banner Css ************/
 .banner {
   margin-top: 0;
-  padding: 260px 0 100px 0;
+  padding: 200px 0 0 0;
   /* background-image: url('./assets/img/banner-bg.gif'); */
   background-position: top center;
   background-size: cover;
@@ -331,23 +336,24 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Skills Css ************/
 .skill {
-  padding: 0 0 50px 0;
+  padding: 50px 0 50px 0;
   position: relative;
   z-index: 2;
 }
 .skill-bx {
-  background: var(--mainlight1);
+  background: var(--maindark1);
   border-radius: 64px;
   text-align: center;
   padding: 60px 50px;
   margin-top: -60px;
 }
 .skill h2 {
+  color: var(--neutral);
 	font-size: 45px;
 	font-weight: 700;
 }
-.skill p {
-    color: var(--neutral);;
+.skill h5 {
+    color: var(--neutral);
     font-size: 18px;
     letter-spacing: 0.8px;
     line-height: 1.5em;
@@ -374,7 +380,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Projects Css ************/
 .project {
-  padding: 80px 0;
+  padding: 50px 0;
   position: relative;
   background-color: var(--maindark2);;
 }
@@ -516,6 +522,22 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   transform: translateY(-50%);
 }
 
+.proj-slider .item video {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;   
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.proj-slider .item YoutubeSlide {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;   
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .proj-item {
   margin: 2% auto;
   padding: 2%;
@@ -525,7 +547,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-color: var(--accentdark2);
   width: 20%;
   min-height: 50px;
-  color: var(--neutral);
+  color: white;
   border-radius: 5px;
   position: relative;
   transition: 0.3s ease-in-out;

@@ -1,42 +1,69 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import sweetcorebrews from "../assets/img/project-imgs/sweetcorebrews.png";
-import curseofthecorsair from "../assets/img/project-imgs/curseofthecorsair/curseofthecorsair.png";
-import ragnaroktd from "../assets/img/project-imgs/ragnaroktd.png";
-import kitsunestail from "../assets/img/project-imgs/kitsunestail.png";
-import scoopsup from "../assets/img/project-imgs/scoopsup.png";
-import flourish from "../assets/img/project-imgs/flourish.png";
-import fieldsoffamine from "../assets/img/project-imgs/fieldsoffamine.png";
-import cnote from "../assets/img/project-imgs/cnote.png";
-import asher from "../assets/img/project-imgs/asher.png";
-import footer from "../assets/img/footer-bg.png";
 import TrackVisibility from 'react-on-screen';
+import { useState } from 'react';
 
 export const Projects = () => {
 
   const projectsGameDev = [
     {
+      title: "Calder Engine",
+      description: "Game Engine Architecture",
+      url: "https://github.com/Jasli106/CalderEngine",
+      detail:
+      (<div>
+        <p>Calder Engine is a 2D game engine that I built from the ground up for EECS 498: Game Engine Architecture. 
+          The engine supports Lua scripting, physics, 2D rendering, and more. 
+          Additionally, I added support for 2D skeletal animation as a custom feature:</p>
+        <ul>
+          <li>Written in C++</li>
+          <li>Multiplatform: Supports Windows, OSX, and Linux</li>
+          <li>Integrates <a href="https://www.lua.org/home.html">Lua</a> and <a href="https://github.com/vinniefalco/LuaBridge">LuaBridge</a> for Lua scripting</li>
+          <li>Integrates <a href="https://github.com/erincatto/box2d">Box2D</a> physics engine</li>
+          <li>Integrates <a href="https://www.libsdl.org">SDL</a> library for rendering, audio, and input handling</li>
+          <li>Integrates <a href="https://github.com/lucidspriter/SpriterPlusPlus/tree/master">SpriterPlusPlus</a> framework (with SDL) to support 2D skeletal animation through Spriter .scon files</li>
+        </ul>
+      </div>),
+      videos: [ {_id: '1', videoUrl: 'https://youtu.be/ZyDkWcwoUBA'},
+        {_id: '2', videoUrl: 'https://www.youtube.com/watch?v=VJ-C0asGSjE&t=2s'}], 
+      imgDir: "calder",
+    },
+    {
       title: "Sweetcore Brews",
-      description: "Programming",
-      imgUrl: sweetcorebrews,
+      description: "Game Programmer Intern",
       url: "https://nochistudios.com/sweetcore-brews",
       detail:
       (<div>
         <p>Sweetcore Brews is an original romance visual novel about a young witch who runs a magical tea shop. 
-          I have been working on this game with Nochi Studios as a gameplay programming intern, starting Summer 2023. Some of my contributions include:</p>
+          I worked on this game with Nochi Studios as a gameplay programming intern over 6 months. Some of my contributions include:</p>
         <ul>
-          <li>Fully developed two versions of Mad Libs minigame (both a PC and mobile version)</li>
-          <li>Owned development of AR experience; players buy and scan physical merch to experience their favorite characters in augmented reality</li>
+          <li>Fully developed AR experience from ground up; players buy and scan physical merch to experience their favorite characters in augmented reality</li>
+          <li>Developed two versions of Mad Libs minigame (PC and mobile)</li>
+          <li>Integrated Unity app, Squarespace website, Firebase database and Google sheets to track customer account data</li>
           <li>Visual effects: Shaders, particle effects, popups, transitions, and other UI effects</li>
-          <li>Backend: Integrating Unity app, Squarespace website, Firebase database and Google sheets to track customer account data</li>
         </ul>
       </div>),
-      imgDir: "curseofthecorsair/",
+      imgDir: "sweetcorebrews",
+    },
+    {
+      title: "Sifting Thyme",
+      description: "Game Programmer Intern",
+      url: "https://nochistudios.com/sweetcore-brews",
+      detail:
+      (<div>
+        <p>Sifting Thyme is a slice-of-life romance visual novel set in a culinary boarding school. 
+          I worked on porting the original RenPy version of this game to Unity with Nochi Studios. Some of my contributions include:</p>
+        <ul>
+          <li>Architectured the in-game text messaging system</li>
+          <li>Implemented in-game social media feeds, toast notifications</li>
+          <li>Redesigned facetime transition screens</li>
+        </ul>
+      </div>),
+      imgDir: "siftingthyme",
     },
     {
       title: "C-Note",
       description: "Programming",
-      imgUrl: cnote,
       url: "https://piyawatm.wixsite.com/c-note",
       detail: (<div>
         <p>C-Note is an educational application that uses augmented reality (AR) technology to help introduce students to sound design.
@@ -49,15 +76,14 @@ export const Projects = () => {
           <li>UI/UX design</li>
           <li>App features: AR image tracking, songbook, AR UI, app UI</li>
           <li>Art integration: 3D animations</li>
-          <li>Some work on the in-app synthesizer using FMOD</li>
+          <li>In-app synthesizer (using FMOD)</li>
         </ul>
       </div>),
-      imgDir: "curseofthecorsair/",
+      imgDir: "cnote",
     },
     {
       title: "Curse of the Corsair",
       description: "Programming",
-      imgUrl: curseofthecorsair,
       url: "https://store.steampowered.com/app/2365570/Curse_of_the_Corsair/",
       detail:
       (<div>
@@ -71,31 +97,28 @@ export const Projects = () => {
           <li>Bug fixes</li>
         </ul>
       </div>),
-      imgDir: "curseofthecorsair/",
+      imgDir: "curseofthecorsair",
     },
     {
       title: "Ragnarok TD",
       description: "Programming",
-      imgUrl: ragnaroktd,
       url: "https://store.steampowered.com/app/2205380/Ragnark_TD/",
       detail: (<div>
         <p>Ragnarok TD is a case study of the classic tower defense game Bloons TD 6. I contributed to implementing multiplayer co-op into this game with WolverineSoft Studio in Fall 2022. 
           I primarily worked on syncing the game state across clients in a recurring loop, and implementing the multiplayer gameplay, including: </p>
         <ul>
-          <li>Syncing player resources</li>
-          <li>Syncing enemy states</li>
-          <li>Developing in-game player-interaction, such as requesting money</li>
-          <li>Developing multiplayer gameplay UI</li>
-          <li>Dividing territory in multiplayer</li>
+          <li>Syncing player resources and enemy states</li>
+          <li>Developing multiplayer interactions, such as sending and requesting currency</li>
+          <li>Developing multiplayer territory system</li>
+          <li>Implementing multiplayer gameplay UI</li>
           <li>Bug fixes</li>
         </ul>
       </div>),
-      imgDir: "curseofthecorsair/",
+      imgDir: "ragnaroktd",
     },
     {
       title: "A Kitsune's Tail",
       description: "Design, Programming, Art",
-      imgUrl: kitsunestail,
       url: "https://jasli106.itch.io/a-kitsunes-tail",
       detail: (<div>
         <p>A Kitsune’s Tail is a 2D puzzle platformer. 
@@ -108,18 +131,17 @@ export const Projects = () => {
           <li>Particle effects</li>
           <li>Lighting design</li>
           <li>Creating shaders</li>
-          <li>Game features: signs and collectibles, player movement, some platforms</li>
+          <li>Programming game features: signs and collectibles, player movement, platforms</li>
           <li>Level design</li>
         </ul>
       </div>),
-      imgDir: "curseofthecorsair/",
+      imgDir: "kitsunestail",
     }
   ];
   const projectsWeb = [
     {
       title: "Asher's Website",
       description: "Programming",
-      imgUrl: asher,
       url: "https://kayjohn1512.github.io",
       detail: (<div>
         <p>Asher's website is an online photo gallery for my roommate's dog, Asher. We found him during a road trip at a gas station in New Mexico, and subsequently, my roommate adopted him. We wanted to have a place to consolidate and record his antics, and so they could be easily shared.
@@ -131,11 +153,68 @@ export const Projects = () => {
           <li>Set up google sheets system to manage photos and image tags</li>
         </ul>
       </div>),
-      imgDir: "curseofthecorsair/",
+      imgDir: "asher",
+    },
+    {
+      title: "Menustone",
+      description: "Web Developer Intern",
+      url: "https://www.menustone.com",
+      detail: (<div>
+        <p>Menustone is an restaurant management service and online ordering platform that primarily serves Asian restaurants. As a web developer intern, I developed several web pages for the company's website.
+          My contributions include:
+        </p>
+        <ul>
+          <li>Designing and developing informational webpages for customer-facing website</li>
+          <li>Building support ticket submission system using the PHPmailer library to provide a point of contact for customers</li>
+        </ul>
+      </div>),
+      imgDir: "menustone",
     }
   ];
 
-  const projectsAcademic = [];
+  const projectsAcademic = [
+    {
+      title: "Timber Game Engine",
+      description: "Research Team Member",
+      url: "https://arborinteractive.com/squirrel_rts/lua_experiment.html?default_mod=021c18c5-d54b-4338-a441-4f07ff496333",
+      detail: (<div>
+        <p>The Timber Game Engine is an accessible web-based game engine for RPG, RTS, and tower defense games. The goal of Timber is to serve as a more specialized, professional alternative to MIT Scratch, supporting 3D and introducing more advanced game engine features in a beginner friendly fashion.
+          I worked on this project for two semesters as part of a 10-person team led by Austin Yarger (UMich faculty).
+          For this project, my contributions include:
+        </p>
+        <ul>
+          <li>Edit mode input handling and scaling tool</li>
+          <li>Building the dialogue system using the open-source Yarn Spinner dialogue library</li>
+          <li>Porting existing Yarn Spinner implementation to Godot 3.5</li>
+          <li>Dynamic UI system for runtime-generated menus</li>
+        </ul>
+        <p>Find the Github <a href="https://github.com/ayarger/timber">here</a></p>
+      </div>),
+      imgDir: "timber",
+    },
+    // },
+    {
+      title: "SASI Project",
+      description: "Research Assistant",
+      url: "https://mavric.si.umich.edu/home",
+      detail: (<div>
+        <p>The SASI project aims to investigate the impact of various methods of training review including a virtual spectator interface for improving human-robot interaction.
+          As a research assistant, I developed and maintained the Unreal Engine 4 simulation used for this project, including:
+        </p>
+        <ul>
+          <li>Debugging and developing features relating to simulation events (takeover, object flagging, and pauses), data logging, replay system and spectator interface (Blueprints)</li>
+          <li>Creating and modifying maps with UE4 landscaping tool</li>
+        </ul>
+      </div>),
+      imgDir: "sasi",
+    }
+  ];
+
+  const [activeKey, setActiveKey] = useState('first');
+
+  const handleSelect = (key) => {
+    setActiveKey(key);
+  };
 
   return (
     <section className="project" id="project">
@@ -146,7 +225,7 @@ export const Projects = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
                 <h2>Projects</h2>
-                <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                <Tab.Container id="projects-tabs" defaultActiveKey="first" onSelect={handleSelect}>
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                     <Nav.Item>
                       <Nav.Link eventKey="first">Game/XR</Nav.Link>
@@ -155,7 +234,7 @@ export const Projects = () => {
                       <Nav.Link eventKey="second">Web</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="third">Academic</Nav.Link>
+                      <Nav.Link eventKey="third">Research</Nav.Link>
                     </Nav.Item>
                   </Nav>
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
@@ -165,7 +244,7 @@ export const Projects = () => {
                           projectsGameDev.map((project, index) => {
                             return (
                               <ProjectCard
-                                key={index}
+                                activeTab={activeKey}
                                 {...project}
                                 />
                             )
@@ -179,7 +258,7 @@ export const Projects = () => {
                           projectsWeb.map((project, index) => {
                             return (
                               <ProjectCard
-                                key={index}
+                                activeTab={activeKey}
                                 {...project}
                                 />
                             )
@@ -193,7 +272,7 @@ export const Projects = () => {
                         projectsAcademic.map((project, index) => {
                           return (
                             <ProjectCard
-                              key={index}
+                              activeTab={activeKey}
                               {...project}
                               />
                           )

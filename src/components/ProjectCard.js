@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import ReactPlayer from 'react-player/youtube';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { ProjectPopup } from "./ProjectPopup";
+import { mediaMapping } from '../mediaDescriptors';
 
-export const ProjectCard = ({ title, description, imgUrl, url, detail, imgDir }) => {
+
+export const ProjectCard = ({ activeTab, title, description, url, detail, videos, imgDir }) => {
   const [visibility, setVisibility] = useState(false);
 
   const popupCloseHandler = (e) => {
@@ -30,13 +33,21 @@ export const ProjectCard = ({ title, description, imgUrl, url, detail, imgDir })
     }
   };
 
-  const getImages = (/** @type {String} */ dir, /** @type {number} */ n) => {
-    const images = [];
-    for (let i = 1; i <= n; i++) {
-        images.push(`${dir}${i}.jpeg`,);
-    }
-    return images;
+  const isVideo = (filename) => {
+    const videoExtensions = ['.mp4', '.mov'];
+    return videoExtensions.some(ext => filename.toLowerCase().endsWith(ext));
   };
+
+  const mediaArray = mediaMapping[imgDir] || [];
+
+  useEffect(() => {
+    // This will trigger a resize event, forcing the carousel to update
+    window.dispatchEvent(new Event('resize'));
+  }, [activeTab]);
+
+  const YoutubeSlide = ({ url, isSelected }) => (
+    <ReactPlayer width="100%" height="400px" url={url} playing={isSelected} />
+  );
 
   return (
     <Container className="proj-item">
@@ -49,14 +60,33 @@ export const ProjectCard = ({ title, description, imgUrl, url, detail, imgDir })
         <Row>
           <Col xs={6}>
             <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme proj-slider" >
-              <div className="item" >
-                <img src={imgUrl} />
-              </div>
-              {getImages(imgDir, 5).map((url, index) => (
-                <div className="item" key={index} >
-                  <img alt="Image" src={require("../assets/img/project-imgs/" + url)} key={index}/>
+              {mediaArray.map((url, index) => {
+                if (isVideo(url)) {
+                  return (
+                    <div className="item" key={url} >
+                      <video controls>
+                        <source src={process.env.PUBLIC_URL + url} type={`video/${url.split('.').pop()}`} />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  );
+                } else {
+                  return (
+                    <div className="item" key={url}>
+                      <img alt="content" src={process.env.PUBLIC_URL + url} />
+                    </div>
+                  );
+                }
+            })}
+            {videos && videos.map(v => (
+                <div className="item">
+                  <YoutubeSlide
+                    url={v.videoUrl}
+                    playing={false}
+                    key={v._id ? v._id : v.id}
+                  />
                 </div>
-              ))}
+            ))}
             </Carousel>
           </Col>
           <Col xs={6}>

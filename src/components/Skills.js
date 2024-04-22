@@ -1,6 +1,3 @@
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import background from "../assets/img/footer-bg.png"
@@ -36,7 +33,7 @@ export const Skills = () => {
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
                                 {/* <img src={meter1} alt="Image" /> */}
-                                <h5>Languages: C++, C#, Python</h5>
+                                <h5>Languages: C++, C#, Python, Swift</h5>
                             </div>
                             <div className="item">
                                 {/* <img src={meter2} alt="Image" /> */}
@@ -44,20 +41,16 @@ export const Skills = () => {
                             </div>
                             <div className="item">
                                 {/* <img src={meter3} alt="Image" /> */}
-                                <h5>Web Development: Javascript, HTML/CSS, PHP, React, SQL</h5>
+                                <h5>Web Development: Javascript, HTML/CSS, PHP, React, SQL, REST APIs</h5>
                             </div>
                             <div className="item">
                                 {/* <img src={meter1} alt="Image" /> */}
                                 <h5>Version Control (Git)</h5>
                             </div>
-                            <div className="item">
-                                {/* <img src={meter1} alt="Image" /> */}
+                            {/* <div className="item">
+                                {/* <img src={meter1} alt="Image" /> }
                                 <h5>Technical Art: 2D Animation/Rigging, Unity Shader Graph, Unity Animator</h5>
-                            </div>
-                            <div className="item">
-                                {/* <img src={meter1} alt="Image" /> */}
-                                <h5>Arduino</h5>
-                            </div>
+                            </div> */}
                         </Carousel>
                     </div>
                 </div>
