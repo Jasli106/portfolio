@@ -179,7 +179,7 @@ export const Projects = () => {
       url: "https://arborinteractive.com/squirrel_rts/lua_experiment.html?default_mod=021c18c5-d54b-4338-a441-4f07ff496333",
       detail: (<div>
         <p>The Timber Game Engine is an accessible web-based game engine for RPG, RTS, and tower defense games. The goal of Timber is to serve as a more specialized, professional alternative to MIT Scratch, supporting 3D and introducing more advanced game engine features in a beginner friendly fashion.
-          I worked on this project for two semesters as part of a 10-person team led by Austin Yarger (UMich faculty).
+          I worked on this project for two semesters as part of a 10-person research team.
           For this project, my contributions include:
         </p>
         <ul>
