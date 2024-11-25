@@ -79,10 +79,15 @@ export const Banner = () => {
                 <h1>{`Hi! I'm Jasmine Li`} 
                 {/* <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span> */}
                 </h1>
-                <p>I am a senior at the University of Michigan, studying Computer Science with a minor in History of Art.</p>
-                <p>I am currently:
-                <br />Developing the Timber game engine, an accessible, web-based game engine aiming to teach RTS, RPG and TD principles/development, as part of a research team led by Austin Yarger (University of Michigan).
-                <br />Contributing to research on situational awareness in human-robot interaction by maintaining an Unreal Engine simulation, and assisting with testing and data collection.</p>
+                <p>I am a recent graduate of the University of Michigan, where I received a Bachelor's Degree in Computer Science, with a minor in History of Art. 
+                  My passion lies in the intersection of technology and creativity.</p>
+                <p>My interests include:</p>
+                <ul>
+                  <li>Game development</li>
+                  <li>XR development</li>
+                  <li>Simulation development</li>
+                  <li>Game engine development</li>
+                </ul>
                 {/* <button className="currently-working-on" href="#project">Find out what I'm working on</button> */}
                 <Nav.Link href="#project" className={'currently-working-on'} onClick={() => onUpdateActiveLink('projects')}>Find out what I'm working on</Nav.Link>
               </div>}
